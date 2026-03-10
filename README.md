@@ -1,6 +1,7 @@
 Overview
 	
-	Thermal drift is a major source of positioning error in precision machine tools during machine warm up. As structural components heat up, thermal expansion introduces systematic micron      level deviations that degrade machining accuracy.This project implements a Python based simulation of the relationship between temperature rise and positioning error in a precision          machine axis and evaluates a temperature based compensation strategy. Using numerical modelling and visual analysis, it illustrates how even a simple compensation model can 				significantly reduce positioning error during warm up.
+	Thermal drift is a major source of positioning error in precision machine tools during machine warm up. As structural components heat up, thermal expansion introduces systematic
+	micron level deviations that degrade machining accuracy.This project implements a Python based simulation of the relationship between temperature rise and positioning error in a 			precision machine axis and evaluates a temperature based compensation strategy. Using numerical modelling and visual analysis, it illustrates how even a simple compensation model can 		significantly reduce positioning error during warm up.
 
 Objectives
 	
@@ -97,5 +98,6 @@ Limitations and Possible Extensions
 	The model considers a single machine axis and a single virtual temperature sensor; real machine tools often use multiple sensor locations and more advanced models.
 	The drift sensitivity k is assumed known; in practice, it would be identified from calibration experiments.
 	Compensation is applied offline to simulated data; in industrial applications, the model would feed into real time controller offsets or NC compensation tables.Possible extensions 		include multi sensor modelling, parameter identification from real measurement data, and integration with a control oriented compensation scheme.
+
 
 
