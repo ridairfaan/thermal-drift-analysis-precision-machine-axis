@@ -7,7 +7,7 @@ significantly reduce positioning error during warm up.
 
 Objectives
 	
-The project aims to:
+The project aims to
 Model thermal drift caused by machine warm up.
 Analyze the relationship between temperature and positioning error.
 Implement a temperature based compensation strategy.
@@ -27,7 +27,7 @@ Compensation model - The compensation model subtracts the predicted drift from t
 
 Methodology
 	
-The workflow consists of the following steps:
+The workflow consists of the following steps
 Temperature simulation - Simulate machine warm up as a gradual temperature increase over time with a small oscillatory component.
 Thermal drift generation - Compute the drift component as a linear function of temperature rise using the drift model.
 Noise modelling - Add zero mean Gaussian noise to represent measurement uncertainty.
@@ -38,7 +38,7 @@ Tolerance evaluation - Evaluate position error before and after compensation rel
 Results
 	
 The simulation shows that thermal expansion during machine warm up can induce several micrometers of positioning error.
-Key metrics (example run):
+Key metrics (example run)
 Temperature rise: 3.52 °C
 Maximum drift before compensation: 9.37 µm
 Residual error after compensation: 1.35 µm
@@ -70,6 +70,7 @@ The model considers a single machine axis and a single virtual temperature senso
 The drift sensitivity k is assumed known; in practice, it would be identified from calibration experiments.
 Compensation is applied offline to simulated data; in industrial applications, the model would feed into real time controller offsets or NC compensation tables.Possible extensions
 include multi sensor modelling, parameter identification from real measurement data, and integration with a control oriented compensation scheme.
+
 
 
 
