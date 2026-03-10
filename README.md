@@ -3,13 +3,12 @@ Thermal Drift Compensation in Precision Machine Systems
 
 Overview
 
-Thermal drift is a major source of positioning error in precision machine tools during machine warm up. As structural components heat up, thermal expansion introduces systematic micron level deviations that degrade machining accuracy.
-This project implements a Python based simulation of the relationship between temperature rise and positioning error in a precision machine axis and evaluates a temperature based compensation strategy. Using numerical modelling and visual analysis, it illustrates how even a simple compensation model can significantly reduce positioning error during warm up.
+	Thermal drift is a major source of positioning error in precision machine tools during machine warm up. As structural components heat up, thermal expansion introduces systematic micron 	level deviations that degrade machining accuracy.This project implements a Python based simulation of the relationship between temperature rise and positioning error in a precision 		machine axis and evaluates a temperature based compensation strategy. Using numerical modelling and visual analysis, it illustrates how even a simple compensation model can 				significantly reduce positioning error during warm up.
 
 
 Objectives
 
-The project aims to:
+	The project aims to:
 	Model thermal drift caused by machine warm up.
 	Analyze the relationship between temperature and positioning error.
 	Implement a temperature based compensation strategy.
@@ -18,27 +17,27 @@ The project aims to:
 
 Modelling Approach
 
-Thermal drift is modeled as a temperature dependent positioning error with added measurement noise.
-Drift model
-e(t)=k⋅(T(t)-T_"ref" )+n(t)
+	Thermal drift is modeled as a temperature dependent positioning error with added measurement noise.
+	Drift model
+	e(t) = k⋅ (T(t) - T_ref) + n(t)
 
-Where:
+	Where:
 	e(t): measured position error (µm)
 	k: thermal drift sensitivity (µm/°C)
 	T(t): temperature at time t (°C)
-	T_"ref" : reference temperature (°C)
+	T_ref : reference temperature (°C)
 	n(t): measurement noise (µm)
 
 
-Compensation model
+Compensation Model
 
-The compensation model subtracts the predicted drift from the measured error:
-e_"comp"  (t)=e(t)-k⋅(T(t)-T_"ref" )
+	The compensation model subtracts the predicted drift from the measured error:
+	e_comp(t) = e(t) - k ⋅ (T(t) - T_ref)
 
 
 Methodology
 
-The workflow consists of the following steps:
+	The workflow consists of the following steps:
 
 	Temperature simulation
 	Simulate machine warm up as a gradual temperature increase over time with a small oscillatory component.
@@ -61,18 +60,19 @@ The workflow consists of the following steps:
 
 Results
 
-The simulation shows that thermal expansion during machine warm up can induce several micrometers of positioning error.
-Key metrics (example run):
+	The simulation shows that thermal expansion during machine warm up can induce several micrometers of positioning error.
+	
+	Key metrics (example run):
 	Temperature rise: 3.52 °C
 	Maximum drift before compensation: 9.37 µm
 	Residual error after compensation: 1.35 µm
 	Accuracy improvement based on max error: ≈ 85.6%
 
-After compensation, the systematic drift is largely removed and the residual positioning error remains close to zero for most of the warm up period, dominated mainly by measurement noise.
+	After compensation, the systematic drift is largely removed and the residual positioning error remains close to zero for most of the warm up period, dominated mainly by measurement 		noise.
 
 Visualizations
 
-The project generates several plots:
+	The project generates several plots:
 
 	1. Temperature Rise Over Time
 	2. Simulated machine warm up behaviour.
@@ -124,5 +124,6 @@ Limitations and Possible Extensions
 	The model considers a single machine axis and a single virtual temperature sensor; real machine tools often use multiple sensor locations and more advanced models.
 	The drift sensitivity k is assumed known; in practice, it would be identified from calibration experiments.
 	Compensation is applied offline to simulated data; in industrial applications, the model would feed into real time controller offsets or NC compensation tables.
-Possible extensions include multi sensor modelling, parameter identification from real measurement data, and integration with a control oriented compensation scheme.
+	Possible extensions include multi sensor modelling, parameter identification from real measurement data, and integration with a control oriented compensation scheme.
+
 
