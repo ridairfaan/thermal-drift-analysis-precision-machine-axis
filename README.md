@@ -5,10 +5,11 @@ level deviations that degrade machining accuracy. This project implements a Pyth
 machine axis and evaluates a temperature based compensation strategy. Using numerical modelling and visual analysis, it illustrates how even a simple compensation model can 
 significantly reduce positioning error during warm up.
 
-## Project Visualization
+## Key Result
 
 <img src="visuals/compensation_comparison.png" width="750">
-*Position error before and after temperature based compensation during machine warm up.*
+
+*Temperature based compensation removes the systematic thermal drift observed during machine warm up. The residual error remains close to zero and within tolerance limits, demonstrating an approximate 85% improvement in positioning accuracy.*
 
 ## Objectives
 	
@@ -103,6 +104,7 @@ Python, NumPy, Pandas, Matplotlib, Power BI (for visual summary)
 The model considers a single machine axis and a single virtual temperature sensor; real machine tools often use multiple sensor locations and more advanced models.
 The drift sensitivity k is assumed known; in practice, it would be identified from calibration experiments.  
 Compensation is applied offline to simulated data; in industrial applications, the model would feed into real time controller offsets or NC compensation tables.Possible extensions include multi sensor modelling, parameter identification from real measurement data, and integration with a control oriented compensation scheme.
+
 
 
 
