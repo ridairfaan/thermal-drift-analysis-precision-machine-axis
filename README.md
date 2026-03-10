@@ -1,7 +1,7 @@
 ## Overview
 	
 Thermal drift is a major source of positioning error in precision machine tools during machine warm up. As structural components heat up, thermal expansion introduces systematic micron 
-level deviations that degrade machining accuracy.This project implements a Python based simulation of the relationship between temperature rise and positioning error in a precision 
+level deviations that degrade machining accuracy. This project implements a Python based simulation of the relationship between temperature rise and positioning error in a precision 
 machine axis and evaluates a temperature based compensation strategy. Using numerical modelling and visual analysis, it illustrates how even a simple compensation model can 
 significantly reduce positioning error during warm up.
 
@@ -51,31 +51,47 @@ Accuracy improvement based on max error: ≈ 85.6%
 After compensation, the systematic drift is largely removed and the residual positioning error remains close to zero for most of the warm up period, dominated mainly by measurement noise.
 
 ## Visualizations
-	
-The project generates several plots:  
 
-Temperature Rise Over Time
-<img src="visuals/temperature_vs_time.png" width="650">
-*Simulated machine warm up showing gradual temperature increase over time.*  
+The project generates several plots illustrating the progression from thermal drift formation to compensation.
 
+---
 
-Position Error Due to Thermal Drift
-<img src="visuals/error_vs_time.png" width="650">
-*Position error growth during machine warm up caused by temperature induced thermal expansion.*  
+### Temperature Rise Over Time
 
+<img src="visuals/temperature_vs_time.png" width="700">
 
-Drift Trend Analysis
-<img src="visuals/drift_trend.png" width="650">
-*Measured position error with a fitted trend line highlighting systematic thermal drift.*  
+*Simulated machine warm up showing gradual temperature increase over time.*
 
+---
 
-Effect of Drift Compensation
-<img src="visuals/compensation_comparison.png" width="650">
-*Comparison of position error before and after applying the temperature based compensation model.*  
+### Position Error Due to Thermal Drift
 
+<img src="visuals/error_vs_time.png" width="700">
 
-Position Error Relative to Tolerance Limits
-<img src="visuals/error_with_tolerance.png" width="650">
+*Position error growth during machine warm up caused by temperature induced thermal expansion.*
+
+---
+
+### Drift Trend Analysis
+
+<img src="visuals/drift_trend.png" width="700">
+
+*Measured position error with a fitted trend line highlighting systematic thermal drift.*
+
+---
+
+### Effect of Drift Compensation
+
+<img src="visuals/compensation_comparison.png" width="700">
+
+*Comparison of position error before and after applying the temperature based compensation model.*
+
+---
+
+### Position Error Relative to Tolerance Limits
+
+<img src="visuals/error_with_tolerance.png" width="700">
+
 *Position error compared against tolerance limits to evaluate compliance after compensation.*
 
 ## Tools and Technologies
@@ -87,6 +103,7 @@ Python, NumPy, Pandas, Matplotlib, Power BI (for visual summary)
 The model considers a single machine axis and a single virtual temperature sensor; real machine tools often use multiple sensor locations and more advanced models.
 The drift sensitivity k is assumed known; in practice, it would be identified from calibration experiments.  
 Compensation is applied offline to simulated data; in industrial applications, the model would feed into real time controller offsets or NC compensation tables.Possible extensions include multi sensor modelling, parameter identification from real measurement data, and integration with a control oriented compensation scheme.
+
 
 
 
