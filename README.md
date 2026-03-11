@@ -105,6 +105,21 @@ The model considers a single machine axis and a single virtual temperature senso
 The drift sensitivity k is assumed known; in practice, it would be identified from calibration experiments.  
 Compensation is applied offline to simulated data; in industrial applications, the model would feed into real time controller offsets or NC compensation tables.Possible extensions include multi sensor modelling, parameter identification from real measurement data, and integration with a control oriented compensation scheme.
 
+## References
+
+The simplified thermal drift and compensation model implemented in this project is conceptually inspired by established research on thermal errors and temperature induced positioning deviations in precision machine tools.
+
+1. Mayr, J., Jedrzejewski, J., Uhlmann, E., Donmez, A., Knapp, W., Hartig, F., et al. (2012).  
+   *Thermal issues in machine tools.*  
+   CIRP Annals – Manufacturing Technology, 61(2), 771–791.  
+   https://doi.org/10.1016/j.cirp.2012.05.008  
+
+2. Bryan, J. B. (1990).  
+   *International status of thermal error research.*  
+   CIRP Annals – Manufacturing Technology, 39(2), 645–656.  
+   https://doi.org/10.1016/S0007-8506(07)63001-7
+
+
 
 
 
