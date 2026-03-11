@@ -103,7 +103,7 @@ Python, NumPy, Pandas, Matplotlib, Power BI (for visual summary)
 
 The model considers a single machine axis and a single virtual temperature sensor; real machine tools often use multiple sensor locations and more advanced models.
 The drift sensitivity k is assumed known; in practice, it would be identified from calibration experiments.  
-Compensation is applied offline to simulated data; in industrial applications, the model would feed into real time controller offsets or NC compensation tables.Possible extensions include multi sensor modelling, parameter identification from real measurement data, and integration with a control oriented compensation scheme.
+Compensation is applied offline to simulated data; in industrial applications, the model would feed into real time controller offsets or NC compensation tables. Possible extensions include multi sensor modelling, parameter identification from real measurement data, and integration with a control oriented compensation scheme.
 
 ## References
 
@@ -118,6 +118,7 @@ The simplified thermal drift and compensation model implemented in this project 
    *International status of thermal error research.*  
    CIRP Annals – Manufacturing Technology, 39(2), 645–656.  
    https://doi.org/10.1016/S0007-8506(07)63001-7
+
 
 
 
